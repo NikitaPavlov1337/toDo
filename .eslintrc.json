@@ -1,0 +1,74 @@
+{
+    "env": {
+        "es6": true,
+        "node": true,
+        "mocha": true
+    },
+    "globals": {
+        "should": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 2020
+    },
+    "extends": "airbnb-base",
+    "rules": {
+        "wrap-iife": [2, "inside"],
+        "space-before-function-paren": ["error", {"anonymous": "always", "named": "never", "asyncArrow": "always"}],
+        "object-curly-spacing": ["error", "always"],
+        "linebreak-style": ["off"],
+        "no-underscore-dangle": ["off"], // mongodb ids have leading underscores in identifiers
+        "no-plusplus": ["off"], // we"re not afraid to use unary increment and decrement
+        "max-len": ["error", 180],
+        "func-names": ["off"], // not all functions should have names
+        "consistent-return": ["off"], // works incorrectly with promises
+        "no-bitwise": ["off"],
+        "no-useless-escape": ["off"],
+        "no-param-reassign": ["off"],
+        "no-template-curly-in-string": ["off"],
+        "import/no-extraneous-dependencies": ["off"],
+        "prefer-arrow-callback": ["off"],
+        "no-prototype-builtins": ["off"],
+        "new-parens": ["off"],
+        "quotes": ["error", "single"],
+
+        "object-curly-newline": ["error", {
+            "ObjectExpression": { "minProperties": 7, "multiline": true, "consistent": true },
+            "ObjectPattern": { "minProperties": 7, "multiline": true, "consistent": true },
+            "ImportDeclaration": { "minProperties": 7, "multiline": true, "consistent": true },
+            "ExportDeclaration": { "minProperties": 7, "multiline": true, "consistent": true }
+        }],
+        "no-shadow": ["warn"], // variables redeclaration
+        "class-methods-use-this": ["warn"],
+        "newline-per-chained-call": ["warn", { "ignoreChainWithDepth": 5 }],
+        "global-require": ["warn"],
+        "import/no-dynamic-require": ["warn"], // it's not good to use something like
+        // `require(require('path').resolve(process.cwd(), 'tests', 'mocks'))`
+        "prefer-const": ["warn"],
+
+        "indent": [1, "tab"],
+        "no-tabs": "off",
+        "no-use-before-define": ["error", { "functions": false, "classes": false }],
+        "no-console": ["error"],
+        "arrow-body-style": ["off"],
+        "comma-dangle": ["error", "never"],
+        "no-mixed-operators": [
+            "error",
+            {
+                "groups": [
+                    // ['+', '-', '*', '/', '%', '**'],
+                    ["&", "|", "^", "~", "<<", ">>", ">>>"],
+                    ["==", "!=", "===", "!==", ">", ">=", "<", "<="],
+                    ["&&", "||"],
+                    ["in", "instanceof"]
+                ],
+                "allowSamePrecedence": true
+            }
+        ],
+
+        // Review after new NodeJS use
+        "strict": ["warn"],
+        "prefer-rest-params": ["warn"],
+        "prefer-spread": ["warn"],
+        "prefer-destructuring": ["warn"]
+    }
+}
